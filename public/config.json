@@ -5,12 +5,15 @@
         "iconSmall": "images/iconSmall.png",
         "category": "message"
     },
-    "type": "REST",
+    "type": "RestDecision",
     "lang": {
         "en-US": {
-            "name": "Template",
-          "description": "A Template for a custom Journey Builder activity",
-          "step1Label": "Configure Activity"
+           "name": "Custom Split",
+        "description": "An app extension with multiple outcomes.",
+        "buyLabel": "Buy",
+        "sellLabel": "Sell",
+        "holdLabel": "Hold"
+          
         }
     },
     "arguments": {
@@ -63,6 +66,40 @@
           "fullscreen": false
         }
     },
+	"outcomes": [
+    {
+        "arguments": {
+            "branchResult": "buy_item",
+            "some argument": "passed from config.json for buy_item"
+        }
+    },
+    {
+        "arguments": {
+            "branchResult": "sell_item",
+            "some argument": "passed from config.json for sell_item"
+        }
+    },
+    {
+        "arguments": {
+            "branchResult": "hold_item",
+            "some argument": "passed from config.json for hold_item"
+        },
+        "metaData": {
+            "label": "MyCustomLabel"
+        }
+    }
+],
+	"outcomeLabelLanguageMap": {
+    "buy_item": "buyLabel",
+    "sell_item": "sellLabel",
+    "hold_item": "holdLabel"
+},"runningModal": {
+        "url": "index.html"
+    },
+    "runningHover": {
+        "url": "index.html"
+    },
+	
     "schema": {
         "arguments": {
             "execute": {
