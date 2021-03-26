@@ -20,9 +20,12 @@
     "arguments": {
         "execute": {
            "inArguments":[
-				{
-                    "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
-                }									
+			{
+                    "emailAddress": "{{InteractionDefaults.Email}}"
+                },
+                {
+                    "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+                }							
 			],
           "outArguments": [],
           "url": "https://mc-custom-app.herokuapp.com/journeybuilder/execute",
